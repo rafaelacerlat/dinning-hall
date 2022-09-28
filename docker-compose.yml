@@ -1,0 +1,17 @@
+version: "2.10"
+services:
+  dinning-hall:
+    depends_on:
+      kitchen:
+        condition: service_started
+    container_name: dinning-hall
+    image: dinning-hall:1
+    ports:
+      - 8081:8081
+  kitchen:
+    container_name: kitchen
+    image: kitchen:1
+    ports:
+      - 8080:8080
+
+  
